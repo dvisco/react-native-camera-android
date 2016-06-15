@@ -30,7 +30,7 @@ import me.dm7.barcodescanner.core.ViewFinderView;
 /**
  * Created by northfoxz on 2016/1/7.
  */
-public abstract class RNCameraInstanceView extends FrameLayout implements Camera.PreviewCallback {
+public abstract class RNCameraInstanceView extends RelativeLayout implements Camera.PreviewCallback {
     private Camera mCamera;
     private RelativeLayout mCameraView;
     private CameraPreview mPreview;
@@ -122,6 +122,16 @@ public abstract class RNCameraInstanceView extends FrameLayout implements Camera
             Rect framingRect = this.mViewFinderView.getFramingRect();
             int viewFinderViewWidth = this.mViewFinderView.getWidth();
             int viewFinderViewHeight = this.mViewFinderView.getHeight();
+
+            if(framingRect != null) {
+                Rect rect = new Rect(framingRect);
+                rect.top = 0;
+                rect.left = 0;
+                rect.right = previewWidth;
+                rect.bottom = previewHeight;
+                return rect;
+            }
+
             if(framingRect == null || viewFinderViewWidth == 0 || viewFinderViewHeight == 0) {
                 return null;
             }

@@ -3,14 +3,16 @@
  */
 'use strict';
 
-var React = require('react-native');
+import React from 'react';
+
+import {
+    PropTypes,
+    requireNativeComponent,
+    UIManager,
+    DeviceEventEmitter
+} from 'react-native';
+
 var Subscribable = require('Subscribable');
-var {
-  PropTypes,
-  requireNativeComponent,
-  UIManager,
-  DeviceEventEmitter
-} = React;
 
 var RN_CAMERA_REF = 'cameraview';
 
