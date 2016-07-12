@@ -11,7 +11,7 @@ import {
     DeviceEventEmitter
 } from 'react-native';
 
-var Subscribable = require('Subscribable');
+var Subscribable = require('../react-native/Libraries/Components/Subscribable');
 
 var RN_CAMERA_REF = 'cameraview';
 
